@@ -10,7 +10,9 @@ def process_input(name_file):
     else:
         with open(name_file, 'r') as f:
             lines = [line.strip() for line in f]
-
+            print("INPUT:")
+            for line in lines:
+                print(line)
         # First line. Coordinates of the area
         x_max_floor = int(lines[0][0])
         y_max_floor = int(lines[0][1])
@@ -30,9 +32,6 @@ def process_input(name_file):
             robot=Robot(x,y,orientation,instructions)
 
             robots.append(robot)
-            print(f"Área: {x_max_floor} x {y_max_floor}")
-            for idx, r in enumerate(robots, 1):
-                print(f"Robot {idx}: Position ({r.x}{r.y} {r.orientation}), Intructions: {r.instructions}")
 
         return x_max_floor,y_max_floor, robots
 
@@ -47,10 +46,12 @@ def main():
     
     #Process robot's instructions
     with open('output.txt', 'w') as f:
+        print("\nOUTPUT:")
         for robot in robots:
             try:
                 x_final,y_final,orientation_final= robot.process_instructions(x_max_floor,y_max_floor)
                 f.write(f"{x_final}{y_final} {orientation_final}\n")
+                print(f"{x_final}{y_final} {orientation_final}")
             except ValueError as e:
                 print(f"Error en instrucciones del robot: {e}")
                 exit(1)
