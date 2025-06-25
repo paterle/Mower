@@ -1,3 +1,4 @@
 # Mower
-# 👩🏻‍💻 Paula Terleira 
+👩🏻‍💻 Paula Terleira 
 paulaterleira@gmail.com
+---
