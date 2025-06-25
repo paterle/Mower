@@ -1,3 +1,3 @@
 # Mower
-# [👩🏻‍💻 Paula Terleira](https://paterle.github.io/) 
+# [👩🏻‍💻 Paula Terleira] 
 paulaterleira@gmail.com
