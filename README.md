@@ -22,7 +22,7 @@ El siguiente proyecto resuelve el problema propuesto, Mower, el cúal consiste e
 - `README.md` -> explicación del proyecto, su estructura y las decisiones tomadas durante su realización.
 --- 
 ## FORMATO ENTRADA Y SALIDA
-### Ejemplo de 'input.txt'
+### Ejemplo de `input.txt`
 ```
 55
 12 N
@@ -34,7 +34,7 @@ MMRMMRMRRM
 - **Siguientes líneas**: organizadas en grupos de dos líneas por robot.
   - **Primera línea del grupo**: posición inicial y orientación del robot (XY Orientación, por ejemplo 12 N)
   - **Segunda línea del grupo**: listado de movimientos a seguir por el robot formado exclusivamente por las instrucciones 'L','R' y 'M'.
-### Ejemplo de 'output.txt'
+### Ejemplo de `output.txt`
 ```
 13 N
 51 E
