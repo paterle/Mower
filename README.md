@@ -23,13 +23,29 @@ Se ha aplicado una arquitectura por capas, separando claramente:
 - Aplicación
   - Se encarga del procesamiento secuencial de los robots, realiza el flujo principal de la aplicación recibiendo los datos de entrada, instanciando los robots, procesando las instrucciones y escribiendo la salida de datos.
   - Se coordinan las llamadas al dominio y la entrada de datos.
+## DECISIONES TÉCNICAS
+- Clase Robot: se ha decidido crear esta clase para encapsular la lógica relacionada con todo lo referente al robot (posicion,orientacion e instrucciones) así como las condiciones para llevar a cabo estas instrucciones.
+  Esta decisión facilita tres principios clave:
+  - Modularidad: al separar la lógica del robot y dentro del mismo las lógicas de giro, movimiento e instrucciones.
+  - Reutilización: permite instanciar y modificar robots desde cualquier parte del código.
+  - Test: facilita la realización de pruebas al no depender de la entrada.
+- Entrada y validación de datos: permite separar el código de lectura y validación de datos de la lógica principal facilitando la mantenibilidad en caso de que se modifique el tipo de entrada y la robustez a la hora de controlar errores en los datos.
+- Procesamiento de entrada: a la hora de procesar las lineas de entrada se ha optado por no usar el método split() debido a que la estructura de datos "12 N" no contiene delimitadores entre las coordenadas x e y, de igual forma esto hace que el tamaño del área a trabajar no pueda ser superior a 9, ya que al pasar a dobles dígitos no habría opción a definir que números pertenecen a la coordenada x e y, debido a esa falta de delimitadores entre ellas en el formato dado como entrada. Por este motivo se ha optado por acceder a cada dígito por su posición.
+- Validaciones: se ha supuesto el formato de entrada fijo dado en las instrucciones, comprobando la existencia de esos datos, datos del área, y dos lineas por cada robot. LLevando a cabo las validaciones opportunas para la comprobación de que el formato del fichero *input.txt* contiene los datos en el formato esperando, manejando las excepciones en el caso de no tener los datos formateados correctamente, por ejemplo que el fihcero este vacío o no contenga 2 líneas de datos por robot. También se han realizado validaciones a la hora de procesar las instrucciones comprobando que recibe las instrucciones aceptadas 'L', 'R' y 'M' exclusivamente.
+## PRUEBAS
+Se ha llevado a cabo la realización de las siguientes pruebas unitarias:
+-  Prueba del impedimento de realizar movimientos fuera del área marcada.
+-  Prueba de realización correcta de los movimientos segun la ubicación y de igual forma con los giros.
+-  Prueba del correcto procesamiento de las instrucciones de movimiento.
+Para la realización de las mismas se ejecuta la instrucción *pytest*
+## SUPUESTOS
+En relación a los supuestos 
 ## EJECUCIÓN DEL PROGRAMA
 - Requisitos previos:
   - Python.
   - PyTest.
   - Fichero de texto *input.txt* en la carpeta del proyecto.
 - Ejecución del proyecto:
-  - python main.py
+  - *python main.py*
 - Ejecución de pruebas
-  - pytest
-
+  - *pytest*
