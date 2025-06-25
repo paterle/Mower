@@ -35,7 +35,7 @@ def test_move_west():
     robot.move(5, 5)
     assert (robot.x, robot.y) == (0, 2)
 
-def test_out_of_bounds():
+def test_off_limits():
     robot = Robot(0, 0, 'S', [])
     robot.move(5, 5)
     assert (robot.x, robot.y) == (0, 0)
