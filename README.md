@@ -10,7 +10,7 @@ El siguiente proyecto resuelve el problema propuesto, Mower, el cúal consiste e
 ---
 
 ## TECNOLOGÍAS EMPLEADAS
-- **Python**
+- **Python** desarrollado y probado con Python 3.11.7.
 - **PyTest** para la realización de pruebas unitarias.
 ---  
 ## ESTRUCTURA DEL PROYECTO
